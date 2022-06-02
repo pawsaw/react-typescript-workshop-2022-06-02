@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
 import './App.css';
 import { BookList, OnBookSelected } from './components/BookList';
-import { books } from './data/books';
 import { Book } from './domain/Book';
+import { useBooks } from './domain/useBooks';
 
 function App() {
+  const books = useBooks();
+
   const onBookSelected: OnBookSelected = useCallback((book: Book) => {
     alert(book.price);
   }, []);
@@ -13,7 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <BookList books={books} onBookSelected={onBookSelected} />
+      {books ? (
+        <BookList books={books} onBookSelected={onBookSelected} />
+      ) : (
+        <span>Loading books...</span>
+      )}
     </div>
   );
 }

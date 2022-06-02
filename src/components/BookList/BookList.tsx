@@ -11,7 +11,7 @@ export const BookList: React.FC<BookListProps> = ({ books, onBookSelected }) => 
   return (
     <div>
       {books.map((book) => (
-        <BookListItem book={book} key={book.title} onBookSelected={onBookSelected} />
+        <BookListItem book={book} key={book.isbn} onBookSelected={onBookSelected} />
       ))}
     </div>
   );
