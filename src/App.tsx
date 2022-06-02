@@ -5,7 +5,7 @@ import { Book } from './domain/Book';
 import { useBooks } from './domain/useBooks';
 
 function App() {
-  const books = useBooks();
+  const { books, reload } = useBooks();
 
   const onBookSelected: OnBookSelected = useCallback((book: Book) => {
     alert(book.price);
@@ -20,6 +20,7 @@ function App() {
       ) : (
         <span>Loading books...</span>
       )}
+      <button onClick={reload}>Reload</button>
     </div>
   );
 }
