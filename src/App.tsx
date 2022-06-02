@@ -9,6 +9,8 @@ function App() {
     alert(book.price);
   }, []);
 
+  // ...
+
   return (
     <div className="App">
       <BookList books={books} onBookSelected={onBookSelected} />

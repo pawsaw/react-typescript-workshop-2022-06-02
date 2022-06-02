@@ -1,4 +1,13 @@
 export interface Book {
+  id: string;
   title: string;
-  price: number;
+  subtitle: string;
+  isbn: string;
+  abstract: string;
+  author: string;
+  publisher: string;
+  price: string;
+  numPages: number;
+  cover: string;
+  userId: number;
 }

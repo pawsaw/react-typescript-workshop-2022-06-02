@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { noop } from 'rxjs';
-
 export interface OnCounterValueChanged {
   (newValue: number): void;
 }

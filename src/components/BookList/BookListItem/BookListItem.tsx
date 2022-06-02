@@ -1,5 +1,5 @@
-import { noop } from 'rxjs';
 import { Book } from '../../../domain/Book';
+import { noop } from '../../../util/noop';
 import { OnBookSelected } from '../OnBookSelected';
 
 export interface BookListItemProps {
