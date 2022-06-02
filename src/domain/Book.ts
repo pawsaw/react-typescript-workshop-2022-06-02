@@ -1,4 +1,4 @@
 export interface Book {
-    title: string;
-    price: number;
+  title: string;
+  price: number;
 }

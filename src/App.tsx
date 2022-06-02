@@ -4,11 +4,7 @@ import { BookList, OnBookSelected } from './components/BookList';
 import { books } from './data/books';
 import { Book } from './domain/Book';
 
-
-
-
 function App() {
-
   const onBookSelected: OnBookSelected = useCallback((book: Book) => {
     alert(book.price);
   }, []);
