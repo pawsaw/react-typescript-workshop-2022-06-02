@@ -1,28 +1,18 @@
 import { useState, useCallback } from 'react';
 import { BookList, OnBookSelected } from './BookList';
 import { useBooks, useBook, Book } from '../../domain/books';
-import { BookDetail } from '../../components/BookDetail';
+import { BookDetail } from '../BookDetailsScreen/BookDetail';
 
 export const BooksScreen: React.FC = () => {
   const { books, reload } = useBooks();
-  const [selectedIsbn, setSelectedIsbn] = useState<string | null>(null);
-  const { book: selectedBook } = useBook(selectedIsbn);
 
-  const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {
-    setSelectedIsbn(isbn);
-  }, []);
+  const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {}, []);
+
   return (
     <div>
       {books ? (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'nowrap',
-          }}
-        >
+        <div>
           <BookList books={books} onBookSelected={onBookSelected} />
-          {selectedBook ? <BookDetail book={selectedBook} /> : <span>No book selected</span>}
         </div>
       ) : (
         <span>Loading books...</span>
