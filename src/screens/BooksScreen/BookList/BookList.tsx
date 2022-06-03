@@ -1,4 +1,4 @@
-import { Book } from '../../domain/books/Book';
+import { Book } from '../../../domain/books/Book';
 import { BookListItem } from './BookListItem/BookListItem';
 import { OnBookSelected } from './OnBookSelected';
 

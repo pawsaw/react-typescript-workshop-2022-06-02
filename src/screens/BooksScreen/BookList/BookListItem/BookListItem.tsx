@@ -1,5 +1,5 @@
-import { Book } from '../../../domain/books/Book';
-import { noop } from '../../../util/noop';
+import { Book } from '../../../../domain/books/Book';
+import { noop } from '../../../../util/noop';
 import { OnBookSelected } from '../OnBookSelected';
 
 export interface BookListItemProps {

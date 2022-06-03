@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BaseUrlProvider } from './api/BaseUrlContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BaseUrlProvider url="http://localhost:4730">
-      <App />
-    </BaseUrlProvider>
+    <BrowserRouter>
+      <BaseUrlProvider url="http://localhost:4730">
+        <App />
+      </BaseUrlProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
