@@ -8,9 +8,11 @@ import { useBooks } from './domain/useBooks';
 function App() {
   const { books, reload } = useBooks();
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [selectedIsbn, setSelectedIsbn] = useState<string | null>(null);
+  // ...
 
-  const onBookSelected: OnBookSelected = useCallback((book: Book) => {
-    setSelectedBook(book);
+  const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {
+    setSelectedIsbn(isbn);
   }, []);
 
   // ...
