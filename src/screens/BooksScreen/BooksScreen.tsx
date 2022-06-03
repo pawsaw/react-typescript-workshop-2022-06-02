@@ -1,12 +1,15 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { BookList, OnBookSelected } from './BookList';
-import { useBooks, useBook, Book } from '../../domain/books';
-import { BookDetail } from '../BookDetailsScreen/BookDetail';
+import { useBooks, Book } from '../../domain/books';
+import { useHistory } from 'react-router-dom';
 
 export const BooksScreen: React.FC = () => {
   const { books, reload } = useBooks();
+  const router = useHistory();
 
-  const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {}, []);
+  const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {
+    router.push(`/books/${isbn}`);
+  }, []);
 
   return (
     <div>
