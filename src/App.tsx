@@ -2,20 +2,16 @@ import { useCallback, useState } from 'react';
 import './App.css';
 import { BookDetail } from './components/BookDetail';
 import { BookList, OnBookSelected } from './components/BookList';
-import { Book } from './domain/Book';
-import { useBooks } from './domain/useBooks';
+import { useBooks, useBook, Book } from './domain/books';
 
 function App() {
   const { books, reload } = useBooks();
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [selectedIsbn, setSelectedIsbn] = useState<string | null>(null);
-  // ...
+  const { book: selectedBook } = useBook(selectedIsbn);
 
   const onBookSelected: OnBookSelected = useCallback(({ isbn }: Book) => {
     setSelectedIsbn(isbn);
   }, []);
-
-  // ...
 
   return (
     <div className="App">
